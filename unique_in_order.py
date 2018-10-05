@@ -1,13 +1,16 @@
 # unique_in_order('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
-def not_duplicate(x,y):
-    # returns true if not duplicate
-    if x != y:
-        return True
-    return False
-
 def unique_in_order(iterable):
-    filtered = filter(lambda x, y: not_duplicate(x, y), iterable)
-    print(reduced)
+    result = [iterable[0]]
+    prev = iterable[0]
+    for item in iterable:
+        if item != prev:
+            result.append(item)
+            print(result)
+        prev = item
+
+    return result
 
 
-unique_in_order('AAAABBBCCDAABBB')
+
+
+print(unique_in_order('AAAABBBCCDAABBB'))
